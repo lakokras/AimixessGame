@@ -8,13 +8,24 @@ public class Game {
     }
 
     public void start() {
-        for (player : players) {
-            int count = player.generateNumber();
-            System.out.println("Ходит " + player.getName() + " " + count + " шагов");
-            player.position += count;
-            if (player.position >= map.length) {
-                System.out.println("Выиграл " + player.getName());
-                return;
+        System.out.println("Добро пожаловать | " + map.getName());
+        while (true) {
+            for (Player player : players) {
+
+                if (Map.isSkipMove()) {
+                    System.out.println("Пропускает ход: " + player.getName());
+                    continue;
+                }
+
+                int move = player.generateNumber();
+                System.out.print("Ходит " + player.getName() + " " + move + " шагов. ");
+                player.position += move;
+                System.out.println("Текущая позиция: " + player.position);
+
+                if (player.position >= map.length) {
+                    System.out.println("Выиграл " + player.getName());
+                    return;
+                }
             }
         }
     }
