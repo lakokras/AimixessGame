@@ -4,18 +4,9 @@ public class Program {
 
         Player usualPlayer = new UsualPlayer();
         Player premiumPlayer = new PremiumPlayer();
+        Map map = new Map();
 
-        usualPlayer.generateNumber();
-        premiumPlayer.generateNumber();
-
-//        if (usualPlayer.getNumber() < premiumPlayer.getNumber()) {
-//            return;
-//        }
-//        if (usualPlayer.getNumber() > premiumPlayer.getNumber()) {
-//            System.out.println("ya v shoke");
-//        }
-
-        System.out.println("Ход обычного игрока " + usualPlayer.getNumber());
-        System.out.println("Ход премиум игрока " + premiumPlayer.getNumber());
+        Game game = new Game([usualPlayer, premiumPlayer], map);
+        game.start();
     }
 }
