@@ -2,9 +2,14 @@ import java.util.Random;
 
 public class UsualPlayer extends Player {
 
+    public UsualPlayer(String name) {
+        super(name);
+    }
+
     @Override
-    public void generateNumber() {
+    public int generateNumber() {
         Random random = new Random();
-        this.number = random.nextInt(60);
+        this.number = random.nextInt(0, 80);
+        return this.number;
     }
 }
