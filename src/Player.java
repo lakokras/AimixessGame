@@ -3,9 +3,9 @@ public abstract class Player {
     private String name;
     public int position = 0;
     protected int number;
-    
+
     public Player(String name){
-     
+
         this.name=name;
     }
 
@@ -13,14 +13,14 @@ public abstract class Player {
         return this.number;
     }
 
-    public int getName() {
+    public String getName() {
         return this.name;
     }
 
-    public int setName(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
-    public abstract void generateNumber();
+    public abstract int generateNumber();
 
 }
